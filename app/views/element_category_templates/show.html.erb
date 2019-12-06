@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Element category #<%= @element_category.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/element_categories" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link element_category start -->
+      <div class="col">
+        <a href="/element_categories/<%= @element_category.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit element category
+        </a>
+      </div>
+      <!-- Edit link element_category end -->
+
+      <!-- Delete link element_category start -->
+      <div class="col">
+        <a href="/delete_element_category/<%= @element_category.id %>" class="btn btn-block btn-outline-secondary">
+          Delete element category
+        </a>
+      </div>
+      <!-- Delete link element_category end -->
+    </div>
+
+    <dl>
+      <dt>
+        Category name
+      </dt>
+      <!-- Display category_name start -->
+      <dd>
+        <%= @element_category.category_name %>
+      </dd>
+      <!-- Display category_name end -->
+
+      <dt>
+        Position number
+      </dt>
+      <!-- Display position_number start -->
+      <dd>
+        <%= @element_category.position_number %>
+      </dd>
+      <!-- Display position_number end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@element_category.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@element_category.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

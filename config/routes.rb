@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Element category resource:
+
+  # CREATE
+  get("/element_categories/new", { :controller => "element_categories", :action => "new_form" })
+  post("/create_element_category", { :controller => "element_categories", :action => "create_row" })
+
+  # READ
+  get("/element_categories", { :controller => "element_categories", :action => "index" })
+  get("/element_categories/:id_to_display", { :controller => "element_categories", :action => "show" })
+
+  # UPDATE
+  get("/element_categories/:prefill_with_id/edit", { :controller => "element_categories", :action => "edit_form" })
+  post("/update_element_category/:id_to_modify", { :controller => "element_categories", :action => "update_row" })
+
+  # DELETE
+  get("/delete_element_category/:id_to_remove", { :controller => "element_categories", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Element resource:
 
   # CREATE
