@@ -1,6 +1,9 @@
 class Workout < ApplicationRecord
   # Direct associations
 
+  has_many   :workout_exercises,
+             :dependent => :destroy
+
   belongs_to :client,
              :counter_cache => true
 
