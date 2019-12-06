@@ -58,13 +58,21 @@
 
         <!-- Display exercise_element.exercise_id start -->
         <td>
-          <%= exercise_element.exercise.right_left_bool %>
+          <% if exercise_element.exercise.present? %>
+            <a href="/exercises/<%= exercise_element.exercise.id %>">
+              <%= exercise_element.exercise.right_left_bool %>
+            </a>
+          <% end %>
         </td>
         <!-- Display exercise_element.exercise_id end -->
 
         <!-- Display exercise_element.element_id start -->
         <td>
-          <%= exercise_element.element.created_at %>
+          <% if exercise_element.element.present? %>
+            <a href="/elements/<%= exercise_element.element.id %>">
+              <%= exercise_element.element.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display exercise_element.element_id end -->
 

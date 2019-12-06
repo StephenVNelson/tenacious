@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @workout.user_id %>
+        <% if @workout.user.present? %>
+          <a href="/users/<%= @workout.user_id %>">
+            <%= @workout.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display client_id start -->
       <dd>
-        <%= @workout.client_id %>
+        <% if @workout.client.present? %>
+          <a href="/clients/<%= @workout.client_id %>">
+            <%= @workout.client.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display client_id end -->
 

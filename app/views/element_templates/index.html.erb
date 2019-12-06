@@ -64,7 +64,11 @@
 
         <!-- Display element.category_id start -->
         <td>
-          <%= element.category.category_name %>
+          <% if element.category.present? %>
+            <a href="/element_categories/<%= element.category.id %>">
+              <%= element.category.category_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display element.category_id end -->
 

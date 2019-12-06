@@ -34,7 +34,11 @@
       </dt>
       <!-- Display exercise_id start -->
       <dd>
-        <%= @exercise_element.exercise_id %>
+        <% if @exercise_element.exercise.present? %>
+          <a href="/exercises/<%= @exercise_element.exercise_id %>">
+            <%= @exercise_element.exercise.right_left_bool %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display exercise_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display element_id start -->
       <dd>
-        <%= @exercise_element.element_id %>
+        <% if @exercise_element.element.present? %>
+          <a href="/elements/<%= @exercise_element.element_id %>">
+            <%= @exercise_element.element.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display element_id end -->
 

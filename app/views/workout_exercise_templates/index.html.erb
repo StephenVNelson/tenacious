@@ -62,13 +62,21 @@
 
         <!-- Display workout_exercise.workout_id start -->
         <td>
-          <%= workout_exercise.workout.user_id %>
+          <% if workout_exercise.workout.present? %>
+            <a href="/workouts/<%= workout_exercise.workout.id %>">
+              <%= workout_exercise.workout.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display workout_exercise.workout_id end -->
 
         <!-- Display workout_exercise.exercise_id start -->
         <td>
-          <%= workout_exercise.exercise.right_left_bool %>
+          <% if workout_exercise.exercise.present? %>
+            <a href="/exercises/<%= workout_exercise.exercise.id %>">
+              <%= workout_exercise.exercise.right_left_bool %>
+            </a>
+          <% end %>
         </td>
         <!-- Display workout_exercise.exercise_id end -->
 

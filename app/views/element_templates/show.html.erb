@@ -43,7 +43,11 @@
       </dt>
       <!-- Display category_id start -->
       <dd>
-        <%= @element.category_id %>
+        <% if @element.category.present? %>
+          <a href="/element_categories/<%= @element.category_id %>">
+            <%= @element.category.category_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display category_id end -->
 
