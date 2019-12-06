@@ -1,0 +1,65 @@
+<!-- Validation failure messages -->
+<% if @workout_exercise.errors.any? %>
+  <% @workout_exercise.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit workout exercise #<%= @workout_exercise.id %>
+</h1>
+
+<hr>
+
+<!-- Form workout_exercise start -->
+<form action="/update_workout_exercise/<%= @workout_exercise.id %>" method="post">
+<!-- Form workout_exercise end -->
+
+  <!-- Label and input for workout_id start -->
+  <div class="form-group">
+    <label for="workout_id">
+      Workout
+    </label>
+
+    <!-- Input for workout_id start -->
+    <input type="text" id="workout_id" name="workout_id" class="form-control" value="<%= @workout_exercise.workout_id %>">
+    <!-- Input for workout_id end -->
+  </div>
+  <!-- Label and input for workout_id end -->
+
+  <!-- Label and input for exercise_id start -->
+  <div class="form-group">
+    <label for="exercise_id">
+      Exercise
+    </label>
+
+    <!-- Input for exercise_id start -->
+    <input type="text" id="exercise_id" name="exercise_id" class="form-control" value="<%= @workout_exercise.exercise_id %>">
+    <!-- Input for exercise_id end -->
+  </div>
+  <!-- Label and input for exercise_id end -->
+
+  <!-- Label and input for workout_focus start -->
+  <div class="form-group">
+    <label for="workout_focus">
+      Workout focus
+    </label>
+
+    <!-- Input for workout_focus start -->
+    <input type="text" id="workout_focus" name="workout_focus" class="form-control" value="<%= @workout_exercise.workout_focus %>">
+    <!-- Input for workout_focus end -->
+  </div>
+  <!-- Label and input for workout_focus end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update workout exercise
+  </button>
+</form>
+
+<hr>
+
+<a href="/workout_exercises">
+  Go back
+</a>
