@@ -1,0 +1,44 @@
+<h1>
+  Edit element #<%= @element.id %>
+</h1>
+
+<hr>
+
+<!-- Form element start -->
+<form action="/update_element/<%= @element.id %>" method="post">
+<!-- Form element end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @element.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <!-- Input for category_id start -->
+    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @element.category_id %>">
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update element
+  </button>
+</form>
+
+<hr>
+
+<a href="/elements">
+  Go back
+</a>

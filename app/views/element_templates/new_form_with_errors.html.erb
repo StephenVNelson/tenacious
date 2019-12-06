@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @element.present? %>
+  <% if @element.errors.any? %>
+    <% @element.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new element
+</h1>
+
+
+<hr>
+
+<!-- Form element start -->
+<form action="/create_element" method="post">
+<!-- Form element end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @element.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <!-- Input for category_id start -->
+    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @element.category_id %>">
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create element
+  </button>
+</form>
+
+<hr>
+
+<a href="/elements">
+  Go back
+</a>

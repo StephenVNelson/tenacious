@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Element resource:
+
+  # CREATE
+  get("/elements/new", { :controller => "elements", :action => "new_form" })
+  post("/create_element", { :controller => "elements", :action => "create_row" })
+
+  # READ
+  get("/elements", { :controller => "elements", :action => "index" })
+  get("/elements/:id_to_display", { :controller => "elements", :action => "show" })
+
+  # UPDATE
+  get("/elements/:prefill_with_id/edit", { :controller => "elements", :action => "edit_form" })
+  post("/update_element/:id_to_modify", { :controller => "elements", :action => "update_row" })
+
+  # DELETE
+  get("/delete_element/:id_to_remove", { :controller => "elements", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Exercise element resource:
 
   # CREATE
