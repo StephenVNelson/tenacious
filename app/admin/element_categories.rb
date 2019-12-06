@@ -1,4 +1,6 @@
 ActiveAdmin.register ElementCategory do
+
+ permit_params :category_name, :position_number
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
