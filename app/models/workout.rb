@@ -13,6 +13,10 @@ class Workout < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :exercises,
+             :through => :workout_exercises,
+             :source => :exercise
+
   # Validations
 
 end

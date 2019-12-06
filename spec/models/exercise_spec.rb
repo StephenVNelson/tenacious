@@ -12,6 +12,8 @@ RSpec.describe Exercise, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:workouts) }
+
     it { should have_many(:elements) }
 
     end

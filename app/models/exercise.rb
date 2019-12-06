@@ -9,6 +9,10 @@ class Exercise < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :workouts,
+             :through => :workout_exercises,
+             :source => :workout
+
   has_many   :elements,
              :through => :exercise_elements,
              :source => :element
