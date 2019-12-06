@@ -1,4 +1,6 @@
 ActiveAdmin.register Exercise do
+
+ permit_params :right_left_bool, :reps_bool, :resistance_bool, :duration_bool, :work_rest_bool, :gif_link
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
