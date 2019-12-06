@@ -1,6 +1,7 @@
 class ElementsController < ApplicationController
   def index
-    @elements = Element.page(params[:page]).per(10)
+    @q = Element.ransack(params[:q])
+    @elements = @q.result(:distinct => true).includes(:exercise_elements, :category, :exercises).page(params[:page]).per(10)
 
     render("element_templates/index.html.erb")
   end

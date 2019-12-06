@@ -1,6 +1,7 @@
 class ExerciseElementsController < ApplicationController
   def index
-    @exercise_elements = ExerciseElement.page(params[:page]).per(10)
+    @q = ExerciseElement.ransack(params[:q])
+    @exercise_elements = @q.result(:distinct => true).includes(:exercise, :element).page(params[:page]).per(10)
 
     render("exercise_element_templates/index.html.erb")
   end

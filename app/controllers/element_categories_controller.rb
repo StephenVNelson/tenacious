@@ -1,6 +1,7 @@
 class ElementCategoriesController < ApplicationController
   def index
-    @element_categories = ElementCategory.page(params[:page]).per(10)
+    @q = ElementCategory.ransack(params[:q])
+    @element_categories = @q.result(:distinct => true).includes(:elements).page(params[:page]).per(10)
 
     render("element_category_templates/index.html.erb")
   end

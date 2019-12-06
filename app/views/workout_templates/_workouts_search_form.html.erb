@@ -1,0 +1,239 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "workouts_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :set_work_rest_array, "Set work rest array" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :set_work_rest_array_gteq, :class => "form-control", :placeholder => "Set work rest array greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :set_work_rest_array_lteq, :class => "form-control", :placeholder => "Set work rest array less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :set_duration_array, "Set duration array" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :set_duration_array_gteq, :class => "form-control", :placeholder => "Set duration array greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :set_duration_array_lteq, :class => "form-control", :placeholder => "Set duration array less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :resistance_array_cont, "Resistance array contains" %>
+    <%= f.text_field :resistance_array_cont, :class => "form-control", :placeholder => "Resistance array contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sets_reps_array, "Sets reps array" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :sets_reps_array_gteq, :class => "form-control", :placeholder => "Sets reps array greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :sets_reps_array_lteq, :class => "form-control", :placeholder => "Sets reps array less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :workout_focus_cont, "Workout focus contains" %>
+    <%= f.text_field :workout_focus_cont, :class => "form-control", :placeholder => "Workout focus contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :day_number, "Day number" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :day_number_gteq, :class => "form-control", :placeholder => "Day number greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :day_number_lteq, :class => "form-control", :placeholder => "Day number less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :week_number, "Week number" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :week_number_gteq, :class => "form-control", :placeholder => "Week number greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :week_number_lteq, :class => "form-control", :placeholder => "Week number less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :phase_number, "Phase number" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :phase_number_gteq, :class => "form-control", :placeholder => "Phase number greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :phase_number_lteq, :class => "form-control", :placeholder => "Phase number less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :logged_date, "Logged date" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='logged_dategteqPicker' data-target-input="nearest">
+          <%= f.text_field :logged_date_gteq, :class => "form-control datetimepicker-input", :placeholder => "Logged date greater than or equal to", :data => {:target => '#logged_dategteqPicker'} %>
+          <div class="input-group-append" data-target='#logged_dategteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='logged_datelteqPicker' data-target-input="nearest">
+          <%= f.text_field :logged_date_lteq, :class => "form-control datetimepicker-input", :placeholder => "Logged date less than or equal to", :data => {:target => '#logged_datelteqPicker'} %>
+          <div class="input-group-append" data-target='#logged_datelteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#logged_dategteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#logged_datelteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#logged_dategteqPicker').on("dp.change", function (e) {
+              $('#logged_datelteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#logged_datelteqPicker').on("dp.change", function (e) {
+              $('#logged_dategteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :scheduled_date, "Scheduled date" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='scheduled_dategteqPicker' data-target-input="nearest">
+          <%= f.text_field :scheduled_date_gteq, :class => "form-control datetimepicker-input", :placeholder => "Scheduled date greater than or equal to", :data => {:target => '#scheduled_dategteqPicker'} %>
+          <div class="input-group-append" data-target='#scheduled_dategteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='scheduled_datelteqPicker' data-target-input="nearest">
+          <%= f.text_field :scheduled_date_lteq, :class => "form-control datetimepicker-input", :placeholder => "Scheduled date less than or equal to", :data => {:target => '#scheduled_datelteqPicker'} %>
+          <div class="input-group-append" data-target='#scheduled_datelteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#scheduled_dategteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#scheduled_datelteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#scheduled_dategteqPicker').on("dp.change", function (e) {
+              $('#scheduled_datelteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#scheduled_datelteqPicker').on("dp.change", function (e) {
+              $('#scheduled_dategteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :user_email_cont, "User email contains" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :client_name_cont, "Client name contains" %>
+    <%= f.text_field :client_name_cont, :class => "form-control", :placeholder => "Client name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :exercises_right_left_bool_eq, "Exercise right_left_bool " %>
+    <label class="radio-inline">
+      <%= f.radio_button :exercises_right_left_bool_eq, "1", checked: ((params[:q] && params[:q][:exercises_right_left_bool_eq]) == "1" ? "checked" : "") %> Yes
+    </label>
+    <label class="radio-inline">
+      <%= f.radio_button :exercises_right_left_bool_eq, "0", checked: ((params[:q] && params[:q][:exercises_right_left_bool_eq]) == "0" ? "checked" : "")%> No
+    </label>
+    <label class="radio-inline">
+      <%= f.radio_button :exercises_right_left_bool_eq, ""%> Either
+    </label>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/workouts" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#workouts_filters">
+  Show filters
+</a>

@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.page(params[:page]).per(10)
+    @q = Client.ransack(params[:q])
+    @clients = @q.result(:distinct => true).includes(:workouts).page(params[:page]).per(10)
 
     render("client_templates/index.html.erb")
   end
