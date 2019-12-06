@@ -1,0 +1,25 @@
+<!-- Form exercise_element start -->
+<form action="/create_exercise_element_from_element" method="post">
+<!-- Form exercise_element end -->
+
+  <!-- Label and input for exercise_id start -->
+  <div class="form-group">
+    <label for="exercise_id">
+      Exercise
+    </label>
+
+    <!-- Input for exercise_id start -->
+    <input type="text" id="exercise_id" name="exercise_id" class="form-control" value="<%= @exercise_element.exercise_id %>">
+    <!-- Input for exercise_id end -->
+  </div>
+  <!-- Label and input for exercise_id end -->
+
+  <!-- Label and input for element_id start -->
+  <!-- Input for element_id start -->
+  <input type="hidden" name="element_id" value="<%= @element.id %>">
+  <!-- Input for element_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create exercise element
+  </button>
+</form>

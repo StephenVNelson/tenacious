@@ -6,6 +6,7 @@ class ElementCategoriesController < ApplicationController
   end
 
   def show
+    @element = Element.new
     @element_category = ElementCategory.find(params.fetch("id_to_display"))
 
     render("element_category_templates/show.html.erb")

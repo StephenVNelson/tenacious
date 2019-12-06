@@ -6,6 +6,8 @@ class ExercisesController < ApplicationController
   end
 
   def show
+    @exercise_element = ExerciseElement.new
+    @workout_exercise = WorkoutExercise.new
     @exercise = Exercise.find(params.fetch("id_to_display"))
 
     render("exercise_templates/show.html.erb")

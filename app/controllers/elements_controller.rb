@@ -6,6 +6,7 @@ class ElementsController < ApplicationController
   end
 
   def show
+    @exercise_element = ExerciseElement.new
     @element = Element.find(params.fetch("id_to_display"))
 
     render("element_templates/show.html.erb")
@@ -27,6 +28,21 @@ class ElementsController < ApplicationController
       @element.save
 
       redirect_back(:fallback_location => "/elements", :notice => "Element created successfully.")
+    else
+      render("element_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_element_category
+    @element = Element.new
+
+    @element.name = params.fetch("name")
+    @element.category_id = params.fetch("category_id")
+
+    if @element.valid?
+      @element.save
+
+      redirect_to("/element_categories/#{@element.category_id}", notice: "Element created successfully.")
     else
       render("element_templates/new_form_with_errors.html.erb")
     end

@@ -6,6 +6,7 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @workout = Workout.new
     @client = Client.find(params.fetch("id_to_display"))
 
     render("client_templates/show.html.erb")

@@ -1,0 +1,37 @@
+<!-- Form workout_exercise start -->
+<form action="/create_workout_exercise_from_exercise" method="post">
+<!-- Form workout_exercise end -->
+
+  <!-- Label and input for workout_id start -->
+  <div class="form-group">
+    <label for="workout_id">
+      Workout
+    </label>
+
+    <!-- Input for workout_id start -->
+    <input type="text" id="workout_id" name="workout_id" class="form-control" value="<%= @workout_exercise.workout_id %>">
+    <!-- Input for workout_id end -->
+  </div>
+  <!-- Label and input for workout_id end -->
+
+  <!-- Label and input for exercise_id start -->
+  <!-- Input for exercise_id start -->
+  <input type="hidden" name="exercise_id" value="<%= @exercise.id %>">
+  <!-- Input for exercise_id end -->
+
+  <!-- Label and input for workout_focus start -->
+  <div class="form-group">
+    <label for="workout_focus">
+      Workout focus
+    </label>
+
+    <!-- Input for workout_focus start -->
+    <input type="text" id="workout_focus" name="workout_focus" class="form-control" value="<%= @workout_exercise.workout_focus %>">
+    <!-- Input for workout_focus end -->
+  </div>
+  <!-- Label and input for workout_focus end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create workout exercise
+  </button>
+</form>

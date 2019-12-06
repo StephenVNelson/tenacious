@@ -32,6 +32,36 @@ class ExerciseElementsController < ApplicationController
     end
   end
 
+  def create_row_from_exercise
+    @exercise_element = ExerciseElement.new
+
+    @exercise_element.exercise_id = params.fetch("exercise_id")
+    @exercise_element.element_id = params.fetch("element_id")
+
+    if @exercise_element.valid?
+      @exercise_element.save
+
+      redirect_to("/exercises/#{@exercise_element.exercise_id}", notice: "ExerciseElement created successfully.")
+    else
+      render("exercise_element_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_element
+    @exercise_element = ExerciseElement.new
+
+    @exercise_element.exercise_id = params.fetch("exercise_id")
+    @exercise_element.element_id = params.fetch("element_id")
+
+    if @exercise_element.valid?
+      @exercise_element.save
+
+      redirect_to("/elements/#{@exercise_element.element_id}", notice: "ExerciseElement created successfully.")
+    else
+      render("exercise_element_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @exercise_element = ExerciseElement.find(params.fetch("prefill_with_id"))
 

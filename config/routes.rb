@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/elements/new", { :controller => "elements", :action => "new_form" })
   post("/create_element", { :controller => "elements", :action => "create_row" })
+  post("/create_element_from_element_category", { :controller => "elements", :action => "create_row_from_element_category" })
 
   # READ
   get("/elements", { :controller => "elements", :action => "index" })
@@ -46,6 +47,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/exercise_elements/new", { :controller => "exercise_elements", :action => "new_form" })
   post("/create_exercise_element", { :controller => "exercise_elements", :action => "create_row" })
+  post("/create_exercise_element_from_element", { :controller => "exercise_elements", :action => "create_row_from_element" })
+  post("/create_exercise_element_from_exercise", { :controller => "exercise_elements", :action => "create_row_from_exercise" })
 
   # READ
   get("/exercise_elements", { :controller => "exercise_elements", :action => "index" })
@@ -86,6 +89,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/workout_exercises/new", { :controller => "workout_exercises", :action => "new_form" })
   post("/create_workout_exercise", { :controller => "workout_exercises", :action => "create_row" })
+  post("/create_workout_exercise_from_exercise", { :controller => "workout_exercises", :action => "create_row_from_exercise" })
+  post("/create_workout_exercise_from_workout", { :controller => "workout_exercises", :action => "create_row_from_workout" })
 
   # READ
   get("/workout_exercises", { :controller => "workout_exercises", :action => "index" })
@@ -107,6 +112,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/workouts/new", { :controller => "workouts", :action => "new_form" })
   post("/create_workout", { :controller => "workouts", :action => "create_row" })
+  post("/create_workout_from_client", { :controller => "workouts", :action => "create_row_from_client" })
 
   # READ
   get("/workouts", { :controller => "workouts", :action => "index" })
