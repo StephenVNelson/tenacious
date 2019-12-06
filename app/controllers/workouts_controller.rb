@@ -1,6 +1,6 @@
 class WorkoutsController < ApplicationController
   def index
-    @workouts = Workout.all
+    @workouts = Workout.page(params[:page]).per(10)
 
     render("workout_templates/index.html.erb")
   end

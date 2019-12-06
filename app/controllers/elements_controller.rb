@@ -1,6 +1,6 @@
 class ElementsController < ApplicationController
   def index
-    @elements = Element.all
+    @elements = Element.page(params[:page]).per(10)
 
     render("element_templates/index.html.erb")
   end

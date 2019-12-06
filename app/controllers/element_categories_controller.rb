@@ -1,6 +1,6 @@
 class ElementCategoriesController < ApplicationController
   def index
-    @element_categories = ElementCategory.all
+    @element_categories = ElementCategory.page(params[:page]).per(10)
 
     render("element_category_templates/index.html.erb")
   end
