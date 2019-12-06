@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link workout start -->
       <div class="col">
         <a href="/workouts/<%= @workout.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit workout
         </a>
       </div>
-      <!-- Edit link workout end -->
 
-      <!-- Delete link workout start -->
       <div class="col">
         <a href="/delete_workout/<%= @workout.id %>" class="btn btn-block btn-outline-secondary">
           Delete workout
         </a>
       </div>
-      <!-- Delete link workout end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @workout.user.present? %>
           <a href="/users/<%= @workout.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Client
       </dt>
-      <!-- Display client_id start -->
       <dd>
         <% if @workout.client.present? %>
           <a href="/clients/<%= @workout.client_id %>">
@@ -53,120 +46,94 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display client_id end -->
 
       <dt>
         Scheduled date
       </dt>
-      <!-- Display scheduled_date start -->
       <dd>
         <%= @workout.scheduled_date %>
       </dd>
-      <!-- Display scheduled_date end -->
 
       <dt>
         Logged date
       </dt>
-      <!-- Display logged_date start -->
       <dd>
         <%= @workout.logged_date %>
       </dd>
-      <!-- Display logged_date end -->
 
       <dt>
         Phase number
       </dt>
-      <!-- Display phase_number start -->
       <dd>
         <%= @workout.phase_number %>
       </dd>
-      <!-- Display phase_number end -->
 
       <dt>
         Week number
       </dt>
-      <!-- Display week_number start -->
       <dd>
         <%= @workout.week_number %>
       </dd>
-      <!-- Display week_number end -->
 
       <dt>
         Day number
       </dt>
-      <!-- Display day_number start -->
       <dd>
         <%= @workout.day_number %>
       </dd>
-      <!-- Display day_number end -->
 
       <dt>
         Workout focus
       </dt>
-      <!-- Display workout_focus start -->
       <dd>
         <%= @workout.workout_focus %>
       </dd>
-      <!-- Display workout_focus end -->
 
       <dt>
         Sets reps array
       </dt>
-      <!-- Display sets_reps_array start -->
       <dd>
         <%= @workout.sets_reps_array %>
       </dd>
-      <!-- Display sets_reps_array end -->
 
       <dt>
         Resistance array
       </dt>
-      <!-- Display resistance_array start -->
       <dd>
         <%= @workout.resistance_array %>
       </dd>
-      <!-- Display resistance_array end -->
 
       <dt>
         Set duration array
       </dt>
-      <!-- Display set_duration_array start -->
       <dd>
         <%= @workout.set_duration_array %>
       </dd>
-      <!-- Display set_duration_array end -->
 
       <dt>
         Set work rest array
       </dt>
-      <!-- Display set_work_rest_array start -->
       <dd>
         <%= @workout.set_work_rest_array %>
       </dd>
-      <!-- Display set_work_rest_array end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@workout.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@workout.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "workout_templates/workout_workout_exercises" %>
@@ -178,4 +145,3 @@
     <%= render partial: "workout_templates/workout_exercises" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -4,57 +4,39 @@
 
 <hr>
 
-<!-- Form client start -->
 <form action="/update_client/<%= @client.id %>" method="post">
-<!-- Form client end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @client.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for email start -->
   <div class="form-group">
     <label for="email">
       Email
     </label>
 
-    <!-- Input for email start -->
     <input type="text" id="email" name="email" class="form-control" value="<%= @client.email %>">
-    <!-- Input for email end -->
   </div>
-  <!-- Label and input for email end -->
 
-  <!-- Label and input for weekley_commitment start -->
   <div class="form-group">
     <label for="weekley_commitment">
       Weekley commitment
     </label>
 
-    <!-- Input for weekley_commitment start -->
     <input type="text" id="weekley_commitment" name="weekley_commitment" class="form-control" value="<%= @client.weekley_commitment %>">
-    <!-- Input for weekley_commitment end -->
   </div>
-  <!-- Label and input for weekley_commitment end -->
 
-  <!-- Label and input for phone start -->
   <div class="form-group">
     <label for="phone">
       Phone
     </label>
 
-    <!-- Input for phone start -->
     <input type="text" id="phone" name="phone" class="form-control" value="<%= @client.phone %>">
-    <!-- Input for phone end -->
   </div>
-  <!-- Label and input for phone end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update client

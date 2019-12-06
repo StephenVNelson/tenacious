@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link element start -->
       <div class="col">
         <a href="/elements/<%= @element.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit element
         </a>
       </div>
-      <!-- Edit link element end -->
 
-      <!-- Delete link element start -->
       <div class="col">
         <a href="/delete_element/<%= @element.id %>" class="btn btn-block btn-outline-secondary">
           Delete element
         </a>
       </div>
-      <!-- Delete link element end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @element.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Category
       </dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @element.category.present? %>
           <a href="/element_categories/<%= @element.category_id %>">
@@ -49,30 +42,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@element.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@element.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "element_templates/element_exercise_elements" %>
@@ -84,4 +71,3 @@
     <%= render partial: "element_templates/element_exercises" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link exercise_element start -->
       <div class="col">
         <a href="/exercise_elements/<%= @exercise_element.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit exercise element
         </a>
       </div>
-      <!-- Edit link exercise_element end -->
 
-      <!-- Delete link exercise_element start -->
       <div class="col">
         <a href="/delete_exercise_element/<%= @exercise_element.id %>" class="btn btn-block btn-outline-secondary">
           Delete exercise element
         </a>
       </div>
-      <!-- Delete link exercise_element end -->
     </div>
 
     <dl>
       <dt>
         Exercise
       </dt>
-      <!-- Display exercise_id start -->
       <dd>
         <% if @exercise_element.exercise.present? %>
           <a href="/exercises/<%= @exercise_element.exercise_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display exercise_id end -->
 
       <dt>
         Element
       </dt>
-      <!-- Display element_id start -->
       <dd>
         <% if @exercise_element.element.present? %>
           <a href="/elements/<%= @exercise_element.element_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display element_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@exercise_element.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@exercise_element.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

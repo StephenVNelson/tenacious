@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form exercise_element start -->
 <form action="/update_exercise_element/<%= @exercise_element.id %>" method="post">
-<!-- Form exercise_element end -->
 
-  <!-- Label and input for exercise_id start -->
   <div class="form-group">
     <label for="exercise_id">
       Exercise
     </label>
 
-    <!-- Input for exercise_id start -->
     <%= select_tag(:exercise_id, options_from_collection_for_select(Exercise.all, :id, :right_left_bool, @exercise_element.exercise_id), :class => "form-control") %>
-    <!-- Input for exercise_id end -->
   </div>
-  <!-- Label and input for exercise_id end -->
 
-  <!-- Label and input for element_id start -->
   <div class="form-group">
     <label for="element_id">
       Element
     </label>
 
-    <!-- Input for element_id start -->
     <%= select_tag(:element_id, options_from_collection_for_select(Element.all, :id, :created_at, @exercise_element.element_id), :class => "form-control") %>
-    <!-- Input for element_id end -->
   </div>
-  <!-- Label and input for element_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update exercise element

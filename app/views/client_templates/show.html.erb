@@ -11,85 +11,67 @@
         </a>
       </div>
 
-      <!-- Edit link client start -->
       <div class="col">
         <a href="/clients/<%= @client.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit client
         </a>
       </div>
-      <!-- Edit link client end -->
 
-      <!-- Delete link client start -->
       <div class="col">
         <a href="/delete_client/<%= @client.id %>" class="btn btn-block btn-outline-secondary">
           Delete client
         </a>
       </div>
-      <!-- Delete link client end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @client.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @client.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Weekley commitment
       </dt>
-      <!-- Display weekley_commitment start -->
       <dd>
         <%= @client.weekley_commitment %>
       </dd>
-      <!-- Display weekley_commitment end -->
 
       <dt>
         Phone
       </dt>
-      <!-- Display phone start -->
       <dd>
         <%= @client.phone %>
       </dd>
-      <!-- Display phone end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@client.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@client.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "client_templates/client_workouts" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

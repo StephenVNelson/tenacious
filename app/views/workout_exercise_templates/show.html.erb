@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link workout_exercise start -->
       <div class="col">
         <a href="/workout_exercises/<%= @workout_exercise.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit workout exercise
         </a>
       </div>
-      <!-- Edit link workout_exercise end -->
 
-      <!-- Delete link workout_exercise start -->
       <div class="col">
         <a href="/delete_workout_exercise/<%= @workout_exercise.id %>" class="btn btn-block btn-outline-secondary">
           Delete workout exercise
         </a>
       </div>
-      <!-- Delete link workout_exercise end -->
     </div>
 
     <dl>
       <dt>
         Workout
       </dt>
-      <!-- Display workout_id start -->
       <dd>
         <% if @workout_exercise.workout.present? %>
           <a href="/workouts/<%= @workout_exercise.workout_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display workout_id end -->
 
       <dt>
         Exercise
       </dt>
-      <!-- Display exercise_id start -->
       <dd>
         <% if @workout_exercise.exercise.present? %>
           <a href="/exercises/<%= @workout_exercise.exercise_id %>">
@@ -53,37 +46,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display exercise_id end -->
 
       <dt>
         Workout focus
       </dt>
-      <!-- Display workout_focus start -->
       <dd>
         <%= @workout_exercise.workout_focus %>
       </dd>
-      <!-- Display workout_focus end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@workout_exercise.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@workout_exercise.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

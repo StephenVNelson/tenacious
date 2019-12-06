@@ -11,100 +11,79 @@
         </a>
       </div>
 
-      <!-- Edit link exercise start -->
       <div class="col">
         <a href="/exercises/<%= @exercise.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit exercise
         </a>
       </div>
-      <!-- Edit link exercise end -->
 
-      <!-- Delete link exercise start -->
       <div class="col">
         <a href="/delete_exercise/<%= @exercise.id %>" class="btn btn-block btn-outline-secondary">
           Delete exercise
         </a>
       </div>
-      <!-- Delete link exercise end -->
     </div>
 
     <dl>
       <dt>
         Right left bool
       </dt>
-      <!-- Display right_left_bool start -->
       <dd>
         <%= @exercise.right_left_bool %>
       </dd>
-      <!-- Display right_left_bool end -->
 
       <dt>
         Reps bool
       </dt>
-      <!-- Display reps_bool start -->
       <dd>
         <%= @exercise.reps_bool %>
       </dd>
-      <!-- Display reps_bool end -->
 
       <dt>
         Resistance bool
       </dt>
-      <!-- Display resistance_bool start -->
       <dd>
         <%= @exercise.resistance_bool %>
       </dd>
-      <!-- Display resistance_bool end -->
 
       <dt>
         Duration bool
       </dt>
-      <!-- Display duration_bool start -->
       <dd>
         <%= @exercise.duration_bool %>
       </dd>
-      <!-- Display duration_bool end -->
 
       <dt>
         Work rest bool
       </dt>
-      <!-- Display work_rest_bool start -->
       <dd>
         <%= @exercise.work_rest_bool %>
       </dd>
-      <!-- Display work_rest_bool end -->
 
       <dt>
         Gif link
       </dt>
-      <!-- Display gif_link start -->
       <dd>
         <%= @exercise.gif_link %>
       </dd>
-      <!-- Display gif_link end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@exercise.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@exercise.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "exercise_templates/exercise_workout_exercises" %>
@@ -128,4 +107,3 @@
     <%= render partial: "exercise_templates/exercise_workouts" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

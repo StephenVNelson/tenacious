@@ -1,23 +1,14 @@
-<!-- Form exercise_element start -->
 <form action="/create_exercise_element_from_exercise" method="post">
-<!-- Form exercise_element end -->
 
-  <!-- Label and input for exercise_id start -->
-  <!-- Input for exercise_id start -->
   <input type="hidden" name="exercise_id" value="<%= @exercise.id %>">
-  <!-- Input for exercise_id end -->
 
-  <!-- Label and input for element_id start -->
   <div class="form-group">
     <label for="element_id">
       Element
     </label>
 
-    <!-- Input for element_id start -->
     <%= select_tag(:element_id, options_from_collection_for_select(Element.all, :id, :created_at, @exercise_element.element_id), :class => "form-control") %>
-    <!-- Input for element_id end -->
   </div>
-  <!-- Label and input for element_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create exercise element

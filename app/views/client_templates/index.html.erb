@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "client_templates/clients_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,47 +58,33 @@
 
       <% @clients.each do |client| %>
       <tr>
-        <!-- Display client.id start -->
         <td>
           <%= client.id %>
         </td>
-        <!-- Display client.id end -->
 
-        <!-- Display client.name start -->
         <td>
           <%= client.name %>
         </td>
-        <!-- Display client.name end -->
 
-        <!-- Display client.email start -->
         <td>
           <%= client.email %>
         </td>
-        <!-- Display client.email end -->
 
-        <!-- Display client.weekley_commitment start -->
         <td>
           <%= client.weekley_commitment %>
         </td>
-        <!-- Display client.weekley_commitment end -->
 
-        <!-- Display client.phone start -->
         <td>
           <%= client.phone %>
         </td>
-        <!-- Display client.phone end -->
 
-        <!-- Display client.created_at start -->
         <td>
           <%= time_ago_in_words(client.created_at) %> ago
         </td>
-        <!-- Display client.created_at end -->
 
-        <!-- Display client.updated_at start -->
         <td>
           <%= time_ago_in_words(client.updated_at) %> ago
         </td>
-        <!-- Display client.updated_at end -->
 
         <td>
           <a href="/clients/<%= client.id %>">
