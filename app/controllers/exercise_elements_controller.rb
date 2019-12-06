@@ -53,6 +53,22 @@ class ExerciseElementsController < ApplicationController
     end
   end
 
+  def destroy_row_from_exercise
+    @exercise_element = ExerciseElement.find(params.fetch("id_to_remove"))
+
+    @exercise_element.destroy
+
+    redirect_to("/exercises/#{@exercise_element.exercise_id}", notice: "ExerciseElement deleted successfully.")
+  end
+
+  def destroy_row_from_element
+    @exercise_element = ExerciseElement.find(params.fetch("id_to_remove"))
+
+    @exercise_element.destroy
+
+    redirect_to("/elements/#{@exercise_element.element_id}", notice: "ExerciseElement deleted successfully.")
+  end
+
   def destroy_row
     @exercise_element = ExerciseElement.find(params.fetch("id_to_remove"))
 

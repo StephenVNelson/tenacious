@@ -53,6 +53,14 @@ class ElementsController < ApplicationController
     end
   end
 
+  def destroy_row_from_category
+    @element = Element.find(params.fetch("id_to_remove"))
+
+    @element.destroy
+
+    redirect_to("/element_categories/#{@element.category_id}", notice: "Element deleted successfully.")
+  end
+
   def destroy_row
     @element = Element.find(params.fetch("id_to_remove"))
 

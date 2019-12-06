@@ -55,6 +55,22 @@ class WorkoutExercisesController < ApplicationController
     end
   end
 
+  def destroy_row_from_workout
+    @workout_exercise = WorkoutExercise.find(params.fetch("id_to_remove"))
+
+    @workout_exercise.destroy
+
+    redirect_to("/workouts/#{@workout_exercise.workout_id}", notice: "WorkoutExercise deleted successfully.")
+  end
+
+  def destroy_row_from_exercise
+    @workout_exercise = WorkoutExercise.find(params.fetch("id_to_remove"))
+
+    @workout_exercise.destroy
+
+    redirect_to("/exercises/#{@workout_exercise.exercise_id}", notice: "WorkoutExercise deleted successfully.")
+  end
+
   def destroy_row
     @workout_exercise = WorkoutExercise.find(params.fetch("id_to_remove"))
 

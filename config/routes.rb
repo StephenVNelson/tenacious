@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_element/:id_to_remove", { :controller => "elements", :action => "destroy_row" })
+  get("/delete_element_from_category/:id_to_remove", { :controller => "elements", :action => "destroy_row_from_category" })
 
   #------------------------------
 
@@ -56,6 +57,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_exercise_element/:id_to_remove", { :controller => "exercise_elements", :action => "destroy_row" })
+  get("/delete_exercise_element_from_element/:id_to_remove", { :controller => "exercise_elements", :action => "destroy_row_from_element" })
+  get("/delete_exercise_element_from_exercise/:id_to_remove", { :controller => "exercise_elements", :action => "destroy_row_from_exercise" })
 
   #------------------------------
 
@@ -94,6 +97,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_workout_exercise/:id_to_remove", { :controller => "workout_exercises", :action => "destroy_row" })
+  get("/delete_workout_exercise_from_exercise/:id_to_remove", { :controller => "workout_exercises", :action => "destroy_row_from_exercise" })
+  get("/delete_workout_exercise_from_workout/:id_to_remove", { :controller => "workout_exercises", :action => "destroy_row_from_workout" })
 
   #------------------------------
 
@@ -113,6 +118,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_workout/:id_to_remove", { :controller => "workouts", :action => "destroy_row" })
+  get("/delete_workout_from_client/:id_to_remove", { :controller => "workouts", :action => "destroy_row_from_client" })
+  get("/delete_workout_from_user/:id_to_remove", { :controller => "workouts", :action => "destroy_row_from_user" })
 
   #------------------------------
 
