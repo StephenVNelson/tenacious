@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @exercise_element.present? %>
+  <% if @exercise_element.errors.any? %>
+    <% @exercise_element.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new exercise element
+</h1>
+
+
+<hr>
+
+<!-- Form exercise_element start -->
+<form action="/create_exercise_element" method="post">
+<!-- Form exercise_element end -->
+
+  <!-- Label and input for exercise_id start -->
+  <div class="form-group">
+    <label for="exercise_id">
+      Exercise
+    </label>
+
+    <!-- Input for exercise_id start -->
+    <input type="text" id="exercise_id" name="exercise_id" class="form-control" value="<%= @exercise_element.exercise_id %>">
+    <!-- Input for exercise_id end -->
+  </div>
+  <!-- Label and input for exercise_id end -->
+
+  <!-- Label and input for element_id start -->
+  <div class="form-group">
+    <label for="element_id">
+      Element
+    </label>
+
+    <!-- Input for element_id start -->
+    <input type="text" id="element_id" name="element_id" class="form-control" value="<%= @exercise_element.element_id %>">
+    <!-- Input for element_id end -->
+  </div>
+  <!-- Label and input for element_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create exercise element
+  </button>
+</form>
+
+<hr>
+
+<a href="/exercise_elements">
+  Go back
+</a>

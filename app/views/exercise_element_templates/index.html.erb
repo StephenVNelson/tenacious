@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All exercise elements
+    </h1>
+
+    <a href="/exercise_elements/new" class="btn btn-block btn-outline-secondary">
+      Add a new exercise element
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Exercise
+        </th>
+
+        <th>
+          Element
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @exercise_elements.each do |exercise_element| %>
+      <tr>
+        <!-- Display exercise_element.id start -->
+        <td>
+          <%= exercise_element.id %>
+        </td>
+        <!-- Display exercise_element.id end -->
+
+        <!-- Display exercise_element.exercise_id start -->
+        <td>
+          <%= exercise_element.exercise_id %>
+        </td>
+        <!-- Display exercise_element.exercise_id end -->
+
+        <!-- Display exercise_element.element_id start -->
+        <td>
+          <%= exercise_element.element_id %>
+        </td>
+        <!-- Display exercise_element.element_id end -->
+
+        <!-- Display exercise_element.created_at start -->
+        <td>
+          <%= time_ago_in_words(exercise_element.created_at) %> ago
+        </td>
+        <!-- Display exercise_element.created_at end -->
+
+        <!-- Display exercise_element.updated_at start -->
+        <td>
+          <%= time_ago_in_words(exercise_element.updated_at) %> ago
+        </td>
+        <!-- Display exercise_element.updated_at end -->
+
+        <td>
+          <a href="/exercise_elements/<%= exercise_element.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
