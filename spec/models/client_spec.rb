@@ -4,6 +4,8 @@ RSpec.describe Client, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:workouts) }
+
     end
 
     describe "InDirect Associations" do
