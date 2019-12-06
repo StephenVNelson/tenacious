@@ -10,6 +10,10 @@ class Element < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :exercises,
+             :through => :exercise_elements,
+             :source => :exercise
+
   # Validations
 
 end

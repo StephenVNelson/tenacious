@@ -12,6 +12,8 @@ RSpec.describe Element, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:exercises) }
+
     end
 
     describe "Validations" do
