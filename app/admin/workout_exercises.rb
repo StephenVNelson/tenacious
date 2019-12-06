@@ -1,4 +1,6 @@
 ActiveAdmin.register WorkoutExercise do
+
+ permit_params :workout_id, :exercise_id, :workout_focus
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
