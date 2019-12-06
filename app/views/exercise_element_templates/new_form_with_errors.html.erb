@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for element_id start -->
-    <input type="text" id="element_id" name="element_id" class="form-control" value="<%= @exercise_element.element_id %>">
+    <%= select_tag(:element_id, options_from_collection_for_select(Element.all, :id, :created_at, @exercise_element.element_id), :class => "form-control") %>
     <!-- Input for element_id end -->
   </div>
   <!-- Label and input for element_id end -->
